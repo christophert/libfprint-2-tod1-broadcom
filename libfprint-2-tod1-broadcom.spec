@@ -119,15 +119,6 @@ install -D -m 0755 %{cspkus3dir}/var/lib/fprint/fw/cv3plus/key.pem %{buildroot}%
 %attr(755, -, -) %{_sharedstatedir}/fprint/.broadcomCv3plusFW/key.pem
 
 %changelog
-* Wed Nov 5 2025 Federico Manzella <ferdiu.manzella@gmail.com> 6.1.26-5
-- fix: wont build anymore due to tag change in soruce repository
-
-* Fri Apr 18 2025 Federico Manzella <ferdiu.manzella@gmail.com> 6.1.26-4
-- Add missing CV3plus libraries
-
-* Wed Feb 5 2025 Federico Manzella <ferdiu.manzella@gmail.com> 6.1.26-2
-- Change path of the installed libraries
-
-* Wed Feb 5 2025 Federico Manzella <ferdiu.manzella@gmail.com> 6.1.26-1
+* Mon Mar 23 2026 Christopher Tran <christophert@noreply.users.github.com> 5.12.018-1
 - First release
 %autochangelog
