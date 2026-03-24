@@ -119,6 +119,6 @@ install -D -m 0755 %{cspkus3dir}/var/lib/fprint/fw/cv3plus/key.pem %{buildroot}%
 %attr(755, -, -) %{_sharedstatedir}/fprint/.broadcomCv3plusFW/key.pem
 
 %changelog
-* Mon Mar 23 2026 Christopher Tran <christophert@noreply.users.github.com> 5.12.018-1
+* Mon Mar 23 2026 Christopher Tran <christophert@noreply.users.github.com> 5.12.018-5
 - First release
 %autochangelog
