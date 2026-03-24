@@ -35,7 +35,8 @@ for several Dell Latitude laptops.
 
 %prep
 # Clone latest for CV3
-git clone --depth 1 --branch ubuntu/latest %{URL} %{_builddir}/%{cs3dir}
+git clone --depth 1 %{URL} %{_builddir}/%{cs3dir}
+git fetch --depth 1 origin %{cv3commit}
 git checkout %{cv3commit}
 # Clone latest for CV3plus TODO: this should be moved to a different package!
 git clone --depth 1 %{URL} %{_builddir}/%{cspkus3dir}
