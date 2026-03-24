@@ -1,6 +1,6 @@
 %global debug_package       %{nil}
 %define major_version       5.12.018
-%define release_version     5
+%define release_version     1
 %define cs3dir              libfprint-2-tod1-broadcom
 %define cspkus3dir          %{cs3dir}-cv3plus
 # NOTE: at the time of writing, the CV3plus libraries where on jammy branch (commit f73dea98646c562f4660c900716ea4dae7b153a7)
@@ -36,8 +36,10 @@ for several Dell Latitude laptops.
 %prep
 # Clone latest for CV3
 git clone --depth 1 %{URL} %{_builddir}/%{cs3dir}
+pushd %{_builddir}/%{cs3dir}
 git fetch --depth 1 origin %{cv3commit}
 git checkout %{cv3commit}
+popd
 # Clone latest for CV3plus TODO: this should be moved to a different package!
 git clone --depth 1 %{URL} %{_builddir}/%{cspkus3dir}
 pushd %{_builddir}/%{cspkus3dir}
@@ -120,6 +122,6 @@ install -D -m 0755 %{cspkus3dir}/var/lib/fprint/fw/cv3plus/key.pem %{buildroot}%
 %attr(755, -, -) %{_sharedstatedir}/fprint/.broadcomCv3plusFW/key.pem
 
 %changelog
-* Mon Mar 23 2026 Christopher Tran <christophert@noreply.users.github.com> 5.12.018-5
+* Mon Mar 23 2026 Christopher Tran <christophert@noreply.users.github.com> 5.12.018-1
 - First release
 %autochangelog
