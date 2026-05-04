@@ -1,6 +1,6 @@
 %global debug_package       %{nil}
 %define major_version       5.12.018
-%define release_version     1
+%define release_version     2
 %define cs3dir              libfprint-2-tod1-broadcom
 %define cspkus3dir          %{cs3dir}-cv3plus
 # NOTE: at the time of writing, the CV3plus libraries where on jammy branch (commit f73dea98646c562f4660c900716ea4dae7b153a7)
@@ -15,7 +15,7 @@ Requires:       openssl-libs, glibc, libfprint-tod
 Provides:       libfprint-2-tod1-broadcom libfprint-2-tod1-broadcom-cv3plus
 Group:          Hardware/Mobile
 License:        NonFree
-URL:            https://git.launchpad.net/~oem-solutions-engineers/libfprint-2-tod1-broadcom/+git/libfprint-2-tod1-broadcom
+URL:            https://github.com/christophert/libfprint-2-tod1-broadcom-ppa.git
 # Source0:        %{name}-%{major_version}.tar.gz
 
 BuildRequires:  git, tar, gzip, systemd, pkgconfig(udev)
@@ -122,6 +122,8 @@ install -D -m 0755 %{cspkus3dir}/var/lib/fprint/fw/cv3plus/key.pem %{buildroot}%
 %attr(755, -, -) %{_sharedstatedir}/fprint/.broadcomCv3plusFW/key.pem
 
 %changelog
+* Sun May 3 2026 Christopher Tran <christophert@noreply.users.github.com> 5.12.018-2
+- Switching PPA for GitHub miror
 * Mon Mar 23 2026 Christopher Tran <christophert@noreply.users.github.com> 5.12.018-1
 - First release
 %autochangelog
